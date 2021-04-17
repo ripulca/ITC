@@ -1,5 +1,5 @@
 <?php
-	$mas=[];
+	$mas=array();
 	for($i=0;$i<50;$i++){
 		array_push($mas,mt_rand());
 	}
