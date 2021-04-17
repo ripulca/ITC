@@ -4,8 +4,11 @@
 <?php
 	$input=$_GET['input'];
 	function reverse($str){
-		return strrev($str);
+		$result='';
+		for($i=strlen($str)-1;$i>=0;$i--){
+			$result.=$str[$i];
+		}
+		var_dump($result);
 	}
-	$res=reverse($input);
-	echo 'output: '.$res;
+	reverse($input);
 ?>
