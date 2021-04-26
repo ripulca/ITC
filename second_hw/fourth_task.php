@@ -3,27 +3,8 @@
    <input type='submit' value='Upload'>
 </form>
 <?php
-	function PDO_PG_connect(){
-		static $db_connection;
-		if (is_null($db_connection)) {
-			try {
-			    $host = 'localhost';
-			    $port = 5432;
-			    $dbname = 'ITC';
-			    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
-			    $username = 'postgres';
-			    $passwd = 'dropit';
-
-				$db_connection= new PDO($dsn, $username, $passwd);
-			} catch (PDOException $e) {
-				echo "Error!: " . $e->getMessage() . "<br />";
-				die();
-			}
-		}
-		return $db_connection;
-	}
 	try {
-		$db_connection=PDO_PG_connect();
+		$db_connection= new PDO("pgsql:host=localhost;port=5432;dbname=ITC", "postgres", "dropit");
         if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['date'])) {
 	        $title = $_POST['title'];
 	        $content = $_POST['content'];
