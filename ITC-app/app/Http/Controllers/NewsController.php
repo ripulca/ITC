@@ -6,7 +6,7 @@
 	class NewsController extends Controller
 	{
 		
-		public function getAllNews()
+		public function index()
 		{
 			return News::all();
 		}
