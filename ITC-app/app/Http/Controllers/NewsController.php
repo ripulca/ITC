@@ -10,6 +10,11 @@
 		{
 			return News::all();
 		}
+
+		public function showAll() {
+	        $news = News::all();
+	        return view('welcome', compact('news'));
+    	}
 	}
 
  ?>
