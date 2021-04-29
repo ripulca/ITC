@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\NewsController::class, 'show']);
+Route::get('/', [\App\Http\Controllers\NewsController::class, 'showAll']);
