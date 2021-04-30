@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='post' action="{{Route("news.update")}}">
+    <form method='post' action="{{Route("news/update")}}">
         {{csrf_field()}}
         Введите название новости: <input type='text' name='title'>
         <br><br>

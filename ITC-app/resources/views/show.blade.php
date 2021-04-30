@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='get' action="{{Route("news.show")}}">
+    <form method='get' action="{{Route("news/show")}}">
         @csrf
         Введите id новости, которую вы хотите увидеть: <input type='text' name='id'>
         <br>
