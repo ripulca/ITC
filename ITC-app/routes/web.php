@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\NewsController::class, 'showAll']);
+// Route::group(['namespace'=>'App\Http\Controllers'], function ()
+// {
+//     Route::prefix('/news')->group(function(){
+//         Route::get('/create','NewsController@create')->name('create');
+//         Route::put('','NewsController@store')->name('store');
+//         Route::get('/{newsID}','NewsController@index')->name('index');
+//         Route::get('', 'NewsController@show')->name('show');
+//         Route::get('/{newsID}/edit','NewsController@edit')->name('edit');
+//         Route::post('/{newsID}','NewsController@update')->name('update');
+//         Route::delete('/{newsID}','NewsController@destroy')->name('destroy');
+//     });
+// });
+
+Route::resource('news', NewsController::class);

@@ -1,18 +1,16 @@
 <!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<ul>
-    @foreach ($news as $row)
-
-        <li>{{$row->title . ' ' . $row->content}}</li>
-    @endforeach
-</ul>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Выбери своего бойца :)</p>
+        <a href="http://localhost/ITC-app/public/news">Вся БД</a><br>
+        <a href="http://localhost/ITC-app/public/news/{id}">Одна новость</a><br>
+        <a href="http://localhost/ITC-app/public/news/create">Создать новость</a>
+    </body>
 </html>
