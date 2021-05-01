@@ -2,15 +2,14 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <!-- <meta name="viewport"
+        <meta name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
     </head>
     <body>
         <p>Выбери своего бойца :)</p>
-        <a href="http://localhost/ITC-app/public/news">Вся БД</a><br>
-        <a href="http://localhost/ITC-app/public/news/{id}">Одна новость</a><br>
-        <a href="http://localhost/ITC-app/public/news/create">Создать новость</a>
+        <a href="http://ITC-app/news">Вся БД</a><br>
+        <a href="http://ITC-app/news/create">Создать новость</a>
     </body>
 </html>

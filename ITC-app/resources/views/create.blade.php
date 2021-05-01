@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='post' action="{{Route("news/store")}}">
-        {{csrf_field()}}
-        Введите название новости: <input type='text' name='title'>
+    <form method='post' action="{{route('news.store')}}">
+        @csrf
+        <input type='text' name='title' placeholder='Название новости'>
         <br><br>
         <input name='content' placeholder="Текст новости" >
         <br><br>

@@ -8,10 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='post' action="{{Route("news.edit")}}">
+    <form method='put' action="{{ route('news.update', $news) }}"">
         @csrf
-        Введите id новости: <input type='text' name='id'>
-        <br>
+        <input type='text' name='title' value='{{$news->title}}'>
+        <br><br>
+        <input name='content' value='{{$news->content}}'>
+        <br><br>
+        Введите дату: <input type='date'>
+        <br><br>
         <input type='submit'>
     </form>
 </body>

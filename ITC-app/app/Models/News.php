@@ -8,7 +8,9 @@
 	{
 		use HasFactory;
 
-		protected $fillable = ['title', 'date', 'content'];
+		protected $fillable = ['title', 'content', 'date'];
+		protected $table='news';
+		public $timestamps = false;
 	}
 
  ?>

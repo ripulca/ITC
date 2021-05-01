@@ -8,11 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='get' action="{{Route("news/show")}}">
-        @csrf
-        Введите id новости, которую вы хотите увидеть: <input type='text' name='id'>
-        <br>
-        <input type='submit'>
-    </form>
+    <div style="width: 18rem;">
+        <ul>
+            <li>ID: {{$news->id}}</li>
+            <li>Title: {{$news->title}}</li>
+            <li>Content: {{$news->content}}</li>
+            <li>Date: {{$news->date}}</li>
+        </ul>
+    </div>
 </body>
 </html>

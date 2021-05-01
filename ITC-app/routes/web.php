@@ -14,17 +14,8 @@ use App\Http\Controllers\NewsController;
 |
 */
 
-// Route::group(['namespace'=>'App\Http\Controllers'], function ()
-// {
-//     Route::prefix('/news')->group(function(){
-//         Route::get('/create','NewsController@create')->name('create');
-//         Route::put('','NewsController@store')->name('store');
-//         Route::get('/{newsID}','NewsController@index')->name('index');
-//         Route::get('', 'NewsController@show')->name('show');
-//         Route::get('/{newsID}/edit','NewsController@edit')->name('edit');
-//         Route::post('/{newsID}','NewsController@update')->name('update');
-//         Route::delete('/{newsID}','NewsController@destroy')->name('destroy');
-//     });
-// });
+Route::get('/', function() {
+    return view('welcome');
+});
 
 Route::resource('news', NewsController::class);

@@ -10,10 +10,10 @@
 <body>
     <ul>
         @foreach($news as $obj)
-            <li>{{obj}}</li>
+            <li>{{$obj}}<br><a href="{{ route('news.show', $obj->id) }}">Checkout</a><br><a href="{{ route('news.edit', $obj->id) }}">Edit</a></li>
         @endforeach
         <br>
-        <a href='http://localhost/ITC-app/public'>На главную</a>
+        <a href='http://ITC-app'>На главную</a>
     </ul>
 </body>
 </html>

@@ -1,8 +1,6 @@
 <?php 
-
-use Symfony\Component\HttpFoundation\Request;
 	namespace App\Http\Controllers;
-
+	use App\Http\Requests\NewsRequest;
 	use App\Models\News;
 
 	class NewsController extends Controller
@@ -12,44 +10,32 @@ use Symfony\Component\HttpFoundation\Request;
 			return view('create');
 		}
 
-		public function store(Request $request)
+		public function store(NewsRequest $request)
 		{
-			return News::create([
-				'title' => $request->title,
-				'date' => $request->date,
-				'content' => $request->content
-			]);
+			News::create($request->only(['title', 'date', 'content']));
+			return redirect()->route('news.index');
 		}
 
 		public function index() 
 		{
-			$entity=News::all();
-	        return view('index',compact($entity));
+			$news=News::all();
+	        return view('index',compact('news'));
     	}
 
-		public function show(int $id)
+		public function show(News $news)
 		{
-			$entity=News::findOrFail($id);
-			return view('welcome', compact($entity));
+			return view('show', compact('news'));
 		}
 
-		public function edit(int $id)
+		public function edit(News $news)
 		{
-			$entity=News::findOrFail($id);
-			return view('edit', compact($entity));
+			return view('edit', compact('news'));
 		}
 
-		public function update(int $id, Request $request)
+		public function update(NewsRequest $request, News $news)
 		{
-			if ($entity = News::findOrFail($id))
-			{
-				$entity->update([
-					'title' =>$request->title,
-					'date' =>$request->date,
-					'content' =>$request->content
-				]);
-				return $entity;
-			}
+			$news->update($request->only(['title', 'content', 'date']));
+			return redirect()->route('news.index');
 		}
 
 		public function delete(int $id)
